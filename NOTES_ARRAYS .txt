@@ -1,0 +1,51 @@
+OM NAMAH SHIVAYA 
+----------------
+
+NOTES FOR ARRAYS: 
+
+-> int arr[n] : data is allocated on the stack 
+-> int *arr = new int[10] : c++ equivalent of malloc 
+-> arrays have random access and provide cache friendliness 
+
+-> Vectors : dynamic sized arrays 
+	=> can be returned from a function 
+	=> can have default values 
+
+
+-> int size = sizeof(arr)/sizeof(arr[0])
+-> int size = v.size()
+
+-> cant do sizeof inside a function for an array, returns the size of the pointer passed 
+
+-> error, cant return a locally created array 
+int* fun(int n)
+{
+	int arr[n];
+	return arr;
+}
+
+-> return a dynamically created array 
+int* fun(int n)
+{
+	int* arr = new int[n];
+	retunrn arr;
+}
+
+-> But you can return a locally created vector 
+vector<int> fun(int n)
+{
+	vector<int> v{n, 0};
+	return v;
+}
+
+-> v1 = v2 : copies all the elements of v2 to v1 
+-> for real life applications, one insert might be expensive than others(dynamic sized arrays)
+
+
+OVERVIEW OF ARRAYS:
+===================
+insert: O(n)
+delete: O(n)
+search: O(n) | O(logn)
+update: O(1)
+
